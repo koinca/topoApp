@@ -10,6 +10,16 @@
     border: 1px solid lightgray;
 }
 
+.mybtn {
+    margin: 0px 0px 5px 5px;
+}
+
+.sim-status {
+  float:right;
+  font-style:italic;
+}
+
+
 .vis.network {
   background-color: #ffffff;
   width: 400px;

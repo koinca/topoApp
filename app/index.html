@@ -2,7 +2,8 @@
 <html ng-app="app">
    <head>
       <meta charset="utf-8">
-      <title>Delta Network Topology Diagram</title>
+      <title>Network Topology Simulator</title>
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
       <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/vis/4.3.0/vis.css">
       <link rel="stylesheet" type="text/css" href="app.css">
       <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
@@ -15,15 +16,16 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.5/lodash.min.js"></script>
       <script src="https://cdn.rawgit.com/AngularClass/angular-websocket/v2.0.0/dist/angular-websocket.min.js"></script>
       <script src="app.js"></script>
-      <style type="text/css">
-      </style>
    </head>
-   <body style="background-color: #eee; padding:30px;font-family:arial">
+   <body style="background-color: #eee; padding:10px;font-family:arial">
       <div class='container' ng-controller="MainCtrl">
-         <span style='font-size:20px'>Delta Network Topology</span>
-         <span> (Click node to zoom in, hoverover to view details)</span>
-         <button style='float:right' id='zin' ng-click="resetView()">Reset view</button>
-         <button style='float:right'  ng-click="getNetworkData()">Simulate network traffic</button>
+         <p class="text-center">Network Topology Simulator</p>
+         <div>
+            <button class="btn btn-outline-dark pull-right btn-sm mybtn" title='Perform one time simulation'  ng-click="getNetworkData()">Simulate network traffic</button>
+            <button class="btn btn-outline-dark pull-right  btn-sm mybtn" title='Zoom out'  id='zin' ng-click="resetView()">Zoom Out</button>
+            <button class="btn btn-outline-dark pull-right btn-sm mybtn" title='Start over'  ng-click="resetData()">Reset</button>
+            <span  class='sim-status' id='sim-status'></span>
+         <div>
          <div id="mynetwork"></div>
       </div>
    </body>
