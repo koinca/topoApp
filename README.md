@@ -1,7 +1,3 @@
-//To generate data
-modify NODE_NUM in genTopo.js
-node genTop.js
-
-
+//need to install node.js first
 npm install
 npm start
